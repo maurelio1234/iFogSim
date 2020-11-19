@@ -10,4 +10,4 @@ echo "DONE"
 
 echo "Running..."
 
-java -classpath $CP org.fog.test.perfeval.VRGameFog
+java -classpath $CP org.fog.test.SimpleExample
