@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "name": "motor-1",
+      "actuatorType": "MOTOR",
+      "type": "ACTUATOR"
+    },
+    {
+      "ratePerMips": 0.0,
+      "downBw": 1000,
+      "level": 1,
+      "upBw": 1000,
+      "ram": 1024,
+      "name": "router",
+      "mips": 1000,
+      "type": "FOG_DEVICE"
+    },
+    {
+      "sensorType": "TEMP",
+      "name": "temp-1",
+      "mean": 10.0,
+      "type": "SENSOR",
+      "distribution": 1,
+      "stdDev": 2.0
+    },
+    {
+      "ratePerMips": 10.0,
+      "downBw": 1000,
+      "level": 0,
+      "upBw": 100,
+      "ram": 10240,
+      "name": "cloud",
+      "mips": 100000,
+      "type": "FOG_DEVICE"
+    }
+  ],
+  "links": [
+    {
+      "latency": 2.0,
+      "source": "motor-1",
+      "destination": "router"
+    },
+    {
+      "latency": 2.0,
+      "source": "temp-1",
+      "destination": "router"
+    },
+    {
+      "latency": 50.0,
+      "source": "router",
+      "destination": "cloud"
+    }
+  ]
+}
